@@ -82,4 +82,9 @@ def order(order_name):
 
 while resources:
     user_input = (input("What would you like? (espresso/latte/cappuccino): ")).lower()
-    resources = order(user_input)
+    if user_input in MENU:
+        if not order(user_input):
+            break
+    else:
+        print("Invalid choice! Please choose 'espresso', 'latte', or 'cappuccino'.")
+
